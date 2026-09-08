@@ -15,24 +15,32 @@ const mobileNav =
     document.getElementById("mobileNav");
 
 
-if (menuToggle && mobileNav) {
+if (
+    menuToggle &&
+    mobileNav
+) {
 
     menuToggle.addEventListener(
         "click",
         () => {
 
             const isOpen =
-                mobileNav.classList.toggle("open");
+                mobileNav.classList.toggle(
+                    "open"
+                );
+
 
             menuToggle.classList.toggle(
                 "active",
                 isOpen
             );
 
+
             menuToggle.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
+
 
             document.body.classList.toggle(
                 "no-scroll",
@@ -43,7 +51,7 @@ if (menuToggle && mobileNav) {
     );
 
 
-    /* Close mobile menu after clicking a link */
+    /* Close mobile navigation after clicking a link */
 
     const mobileLinks =
         mobileNav.querySelectorAll("a");
@@ -60,14 +68,17 @@ if (menuToggle && mobileNav) {
                         "open"
                     );
 
+
                     menuToggle.classList.remove(
                         "active"
                     );
+
 
                     menuToggle.setAttribute(
                         "aria-expanded",
                         "false"
                     );
+
 
                     document.body.classList.remove(
                         "no-scroll"
@@ -87,13 +98,19 @@ if (menuToggle && mobileNav) {
 ========================================================= */
 
 const heroCharacter =
-    document.getElementById("heroCharacter");
+    document.getElementById(
+        "heroCharacter"
+    );
 
 const characterRole =
-    document.getElementById("characterRole");
+    document.getElementById(
+        "characterRole"
+    );
 
 const characterName =
-    document.getElementById("characterName");
+    document.getElementById(
+        "characterName"
+    );
 
 const characterDescription =
     document.getElementById(
@@ -111,7 +128,8 @@ const switchText =
     );
 
 
-let showingLakan = true;
+let showingLakan =
+    true;
 
 
 const characters = {
@@ -139,7 +157,7 @@ const characters = {
     sidapa: {
 
         image:
-            "assets/sidapa.png",
+            "assets/JIMMY.png",
 
         role:
             "GOD OF DEATH",
@@ -159,7 +177,7 @@ const characters = {
 
 
 /* =========================================================
-   CHANGE CHARACTER
+   CHANGE HERO CHARACTER
 ========================================================= */
 
 function switchCharacter() {
@@ -193,6 +211,7 @@ function switchCharacter() {
 
             heroCharacter.src =
                 nextCharacter.image;
+
 
             heroCharacter.alt =
                 nextCharacter.name;
@@ -270,7 +289,9 @@ document.addEventListener(
 
 
         if (
-            mobileNav.classList.contains("open") &&
+            mobileNav.classList.contains(
+                "open"
+            ) &&
             !clickedInsideMenu &&
             !clickedButton
         ) {
@@ -279,14 +300,17 @@ document.addEventListener(
                 "open"
             );
 
+
             menuToggle.classList.remove(
                 "active"
             );
+
 
             menuToggle.setAttribute(
                 "aria-expanded",
                 "false"
             );
+
 
             document.body.classList.remove(
                 "no-scroll"
@@ -299,7 +323,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   ESCAPE KEY
+   ESCAPE KEY FOR MOBILE MENU
 ========================================================= */
 
 document.addEventListener(
@@ -309,25 +333,290 @@ document.addEventListener(
         if (
             event.key === "Escape" &&
             mobileNav &&
-            mobileNav.classList.contains("open")
+            mobileNav.classList.contains(
+                "open"
+            )
         ) {
 
             mobileNav.classList.remove(
                 "open"
             );
 
-            menuToggle.classList.remove(
-                "active"
-            );
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            if (menuToggle) {
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
 
             document.body.classList.remove(
                 "no-scroll"
             );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   DEVELOPER CARD LIGHTBOX
+========================================================= */
+
+const developerCards =
+    document.querySelectorAll(
+        ".developer-card"
+    );
+
+
+const photoLightbox =
+    document.getElementById(
+        "photoLightbox"
+    );
+
+
+const lightboxImage =
+    document.getElementById(
+        "lightboxImage"
+    );
+
+
+const lightboxName =
+    document.getElementById(
+        "lightboxName"
+    );
+
+
+const lightboxClose =
+    document.getElementById(
+        "lightboxClose"
+    );
+
+
+/* =========================================================
+   OPEN DEVELOPER PHOTO
+========================================================= */
+
+function openDeveloperPhoto(
+    card
+) {
+
+    if (
+        !photoLightbox ||
+        !lightboxImage ||
+        !lightboxName
+    ) {
+
+        return;
+
+    }
+
+
+    const image =
+        card.dataset.image;
+
+
+    const name =
+        card.dataset.name;
+
+
+    if (!image) {
+
+        return;
+
+    }
+
+
+    lightboxImage.src =
+        image;
+
+
+    lightboxImage.alt =
+        name || "Developer photo";
+
+
+    lightboxName.textContent =
+        name || "";
+
+
+    photoLightbox.classList.add(
+        "open"
+    );
+
+
+    photoLightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE DEVELOPER PHOTO
+========================================================= */
+
+function closeDeveloperPhoto() {
+
+    if (!photoLightbox) {
+
+        return;
+
+    }
+
+
+    photoLightbox.classList.remove(
+        "open"
+    );
+
+
+    photoLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+
+    /*
+     * Clear the image after the
+     * closing transition.
+     */
+
+    setTimeout(
+        () => {
+
+            if (lightboxImage) {
+
+                lightboxImage.src =
+                    "";
+
+                lightboxImage.alt =
+                    "";
+
+            }
+
+
+            if (lightboxName) {
+
+                lightboxName.textContent =
+                    "";
+
+            }
+
+        },
+        250
+    );
+
+}
+
+
+/* =========================================================
+   CLICK ANYWHERE ON DEVELOPER CARD
+========================================================= */
+
+developerCards.forEach(
+    (card) => {
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                openDeveloperPhoto(
+                    card
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE USING X BUTTON
+========================================================= */
+
+if (lightboxClose) {
+
+    lightboxClose.addEventListener(
+        "click",
+        (event) => {
+
+            event.stopPropagation();
+
+            closeDeveloperPhoto();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE BY CLICKING BACKDROP
+========================================================= */
+
+if (photoLightbox) {
+
+    photoLightbox.addEventListener(
+        "click",
+        (event) => {
+
+            /*
+             * Only close when clicking the
+             * dark area outside the image.
+             */
+
+            if (
+                event.target ===
+                photoLightbox
+            ) {
+
+                closeDeveloperPhoto();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE WITH ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            photoLightbox &&
+            photoLightbox.classList.contains(
+                "open"
+            )
+        ) {
+
+            closeDeveloperPhoto();
 
         }
 
