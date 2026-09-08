@@ -3339,6 +3339,324 @@ strong {
 
 }
 
+/* =========================================
+   DOWNLOAD SECTION
+========================================= */
+
+.download-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-container {
+    position: relative;
+}
+
+
+/* HEADER */
+
+.download-section .section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.download-section .section-heading h2 {
+    max-width: 900px;
+    margin: 18px auto 20px;
+}
+
+.download-section .section-heading h2 em {
+    color: var(--gold);
+    font-style: normal;
+}
+
+.download-section .section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* DOWNLOAD CARD */
+
+.download-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    min-height: 480px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(201, 158, 67, 0.25);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(201, 158, 67, 0.08),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+
+/* LEFT CHARACTER */
+
+.download-character {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    min-height: 480px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center 70%,
+            rgba(201, 158, 67, 0.16),
+            transparent 58%
+        );
+}
+
+
+/* CHARACTER GLOW */
+
+.download-character-glow {
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(201, 158, 67, 0.14);
+}
+
+
+/* CHARACTER */
+
+.download-character img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    height: 450px;
+    width: auto;
+    max-width: 90%;
+
+    object-fit: contain;
+    object-position: bottom center;
+
+    filter: drop-shadow(
+        0 25px 30px rgba(0, 0, 0, 0.55)
+    );
+}
+
+
+/* RIGHT CONTENT */
+
+.download-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px;
+}
+
+
+/* PLATFORM */
+
+.download-platform {
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* TITLE */
+
+.download-content h3 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+
+/* VERSION */
+
+.download-version {
+    margin: 8px 0 25px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* BUTTON */
+
+.download-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    min-width: 150px;
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    background: var(--cream);
+    color: #17130e;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+}
+
+
+/* DISABLED BUTTON */
+
+.download-button.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* NOTE */
+
+.download-note {
+    margin: 13px 0 28px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* SPECS */
+
+.download-specs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px 30px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.download-spec {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.download-spec span {
+    color: var(--muted);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.download-spec strong {
+    color: var(--cream);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   DOWNLOAD RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .download-card {
+        grid-template-columns: 1fr;
+    }
+
+    .download-character {
+        min-height: 380px;
+    }
+
+    .download-character img {
+        height: 360px;
+    }
+
+    .download-content {
+        padding: 45px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .download-section .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .download-card {
+        min-height: auto;
+    }
+
+    .download-character {
+        min-height: 330px;
+    }
+
+    .download-character img {
+        height: 315px;
+    }
+
+    .download-content {
+        padding: 35px 25px;
+    }
+
+    .download-content h3 {
+        font-size: 34px;
+    }
+
+    .download-specs {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+}
 
 /* =========================================================
    ACCESSIBILITY
@@ -3370,3 +3688,4 @@ strong {
     }
 
 }
+
