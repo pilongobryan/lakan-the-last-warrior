@@ -1,340 +1,332 @@
 /* =========================================================
    LAKAN: THE LAST WARRIOR
-   Website JavaScript
+   JAVASCRIPT
 ========================================================= */
 
 
 /* =========================================================
-   WAIT FOR PAGE TO LOAD
+   MOBILE NAVIGATION
 ========================================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const mobileNav =
+    document.getElementById("mobileNav");
 
 
-        /* =================================================
-           MOBILE MENU
-        ================================================== */
+if (menuToggle && mobileNav) {
 
-        const menuButton =
-            document.getElementById("menuButton");
+    menuToggle.addEventListener(
+        "click",
+        () => {
 
-        const mobileMenu =
-            document.getElementById("mobileMenu");
+            const isOpen =
+                mobileNav.classList.toggle("open");
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            document.body.classList.toggle(
+                "no-scroll",
+                isOpen
+            );
+
+        }
+    );
 
 
-        if (
-            menuButton &&
-            mobileMenu
-        ) {
+    /* Close mobile menu after clicking a link */
 
-            menuButton.addEventListener(
+    const mobileLinks =
+        mobileNav.querySelectorAll("a");
+
+
+    mobileLinks.forEach(
+        (link) => {
+
+            link.addEventListener(
                 "click",
-                function () {
+                () => {
 
-                    const isOpen =
-                        menuButton.getAttribute(
-                            "aria-expanded"
-                        ) === "true";
+                    mobileNav.classList.remove(
+                        "open"
+                    );
 
+                    menuToggle.classList.remove(
+                        "active"
+                    );
 
-                    menuButton.setAttribute(
+                    menuToggle.setAttribute(
                         "aria-expanded",
-                        String(!isOpen)
+                        "false"
                     );
 
-
-                    menuButton.setAttribute(
-                        "aria-label",
-                        isOpen
-                            ? "Open menu"
-                            : "Close menu"
+                    document.body.classList.remove(
+                        "no-scroll"
                     );
-
-
-                    mobileMenu.classList.toggle(
-                        "is-open",
-                        !isOpen
-                    );
-
-                }
-            );
-
-
-            /*
-             * Close mobile menu
-             * after clicking a navigation link.
-             */
-
-            const mobileLinks =
-                mobileMenu.querySelectorAll("a");
-
-
-            mobileLinks.forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            mobileMenu.classList.remove(
-                                "is-open"
-                            );
-
-
-                            menuButton.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-
-                            menuButton.setAttribute(
-                                "aria-label",
-                                "Open menu"
-                            );
-
-                        }
-                    );
-
-                }
-            );
-
-
-            /*
-             * Close the menu when the user
-             * clicks outside it.
-             */
-
-            document.addEventListener(
-                "click",
-                function (event) {
-
-                    const clickedInsideMenu =
-                        mobileMenu.contains(event.target);
-
-                    const clickedButton =
-                        menuButton.contains(event.target);
-
-
-                    if (
-                        !clickedInsideMenu &&
-                        !clickedButton &&
-                        mobileMenu.classList.contains("is-open")
-                    ) {
-
-                        mobileMenu.classList.remove(
-                            "is-open"
-                        );
-
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-
-                        menuButton.setAttribute(
-                            "aria-label",
-                            "Open menu"
-                        );
-
-                    }
 
                 }
             );
 
         }
+    );
+
+}
 
 
+/* =========================================================
+   HERO CHARACTER SWITCHER
+========================================================= */
 
-        /* =================================================
-           HERO CHARACTER SWITCHER
-        ================================================== */
+const heroCharacter =
+    document.getElementById("heroCharacter");
+
+const characterRole =
+    document.getElementById("characterRole");
+
+const characterName =
+    document.getElementById("characterName");
+
+const characterDescription =
+    document.getElementById(
+        "characterDescription"
+    );
+
+const characterSwitch =
+    document.getElementById(
+        "characterSwitch"
+    );
+
+const switchText =
+    document.getElementById(
+        "switchText"
+    );
 
 
-        const heroCharacter =
-            document.getElementById(
-                "heroCharacter"
+let showingLakan = true;
+
+
+const characters = {
+
+    lakan: {
+
+        image:
+            "assets/lakan.png",
+
+        role:
+            "SACRED GUARDIAN",
+
+        name:
+            "LAKAN",
+
+        description:
+            "A warrior whose journey begins with a search for identity, purpose, and balance.",
+
+        button:
+            "Meet Sidapa"
+
+    },
+
+
+    sidapa: {
+
+        image:
+            "assets/sidapa.png",
+
+        role:
+            "GOD OF DEATH",
+
+        name:
+            "SIDAPA",
+
+        description:
+            "The God of Death and Ruler of Fate whose presence forms a central force in Lakan's journey.",
+
+        button:
+            "Meet Lakan"
+
+    }
+
+};
+
+
+/* =========================================================
+   CHANGE CHARACTER
+========================================================= */
+
+function switchCharacter() {
+
+    if (
+        !heroCharacter ||
+        !characterRole ||
+        !characterName ||
+        !characterDescription ||
+        !switchText
+    ) {
+
+        return;
+
+    }
+
+
+    const nextCharacter =
+        showingLakan
+            ? characters.sidapa
+            : characters.lakan;
+
+
+    heroCharacter.classList.add(
+        "switching"
+    );
+
+
+    setTimeout(
+        () => {
+
+            heroCharacter.src =
+                nextCharacter.image;
+
+            heroCharacter.alt =
+                nextCharacter.name;
+
+
+            characterRole.textContent =
+                nextCharacter.role;
+
+
+            characterName.textContent =
+                nextCharacter.name;
+
+
+            characterDescription.textContent =
+                nextCharacter.description;
+
+
+            switchText.textContent =
+                nextCharacter.button;
+
+
+            heroCharacter.classList.remove(
+                "switching"
+            );
+
+        },
+        220
+    );
+
+
+    showingLakan =
+        !showingLakan;
+
+}
+
+
+if (characterSwitch) {
+
+    characterSwitch.addEventListener(
+        "click",
+        switchCharacter
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            !mobileNav ||
+            !menuToggle
+        ) {
+
+            return;
+
+        }
+
+
+        const clickedInsideMenu =
+            mobileNav.contains(
+                event.target
             );
 
 
-        const characterSwitch =
-            document.getElementById(
-                "characterSwitch"
+        const clickedButton =
+            menuToggle.contains(
+                event.target
             );
-
-
-        const characterRole =
-            document.getElementById(
-                "characterRole"
-            );
-
-
-        const characterName =
-            document.getElementById(
-                "characterName"
-            );
-
-
-        const characterDescription =
-            document.getElementById(
-                "characterDescription"
-            );
-
-
-        const switchText =
-            document.getElementById(
-                "switchText"
-            );
-
-
-        /*
-         * Keep track of which character
-         * is currently displayed.
-         */
-
-        let showingLakan = true;
-
 
 
         if (
-            heroCharacter &&
-            characterSwitch
+            mobileNav.classList.contains("open") &&
+            !clickedInsideMenu &&
+            !clickedButton
         ) {
 
+            mobileNav.classList.remove(
+                "open"
+            );
 
-            characterSwitch.addEventListener(
-                "click",
-                function () {
+            menuToggle.classList.remove(
+                "active"
+            );
 
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-                    /*
-                     * Fade the current
-                     * character out.
-                     */
+            document.body.classList.remove(
+                "no-scroll"
+            );
 
-                    heroCharacter.classList.remove(
-                        "active"
-                    );
+        }
 
-
-                    /*
-                     * Wait slightly for
-                     * the fade transition.
-                     */
-
-                    window.setTimeout(
-                        function () {
+    }
+);
 
 
-                            /* =========================
-                               SHOW SIDAPA
-                            ========================== */
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
-                            if (showingLakan) {
+document.addEventListener(
+    "keydown",
+    (event) => {
 
+        if (
+            event.key === "Escape" &&
+            mobileNav &&
+            mobileNav.classList.contains("open")
+        ) {
 
-                                heroCharacter.src =
-                                    "assets/sidapa.png";
+            mobileNav.classList.remove(
+                "open"
+            );
 
+            menuToggle.classList.remove(
+                "active"
+            );
 
-                                heroCharacter.alt =
-                                    "Sidapa, God of Death and Ruler of Fate";
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-
-                                characterRole.textContent =
-                                    "ANTAGONIST";
-
-
-                                characterName.textContent =
-                                    "SIDAPA";
-
-
-                                characterDescription.textContent =
-                                    "The God of Death and Ruler of Fate who seeks to eliminate the Alab ng Diwa.";
-
-
-                                switchText.textContent =
-                                    "Meet Lakan";
-
-
-                                characterSwitch.setAttribute(
-                                    "aria-label",
-                                    "Switch to Lakan"
-                                );
-
-
-                                showingLakan =
-                                    false;
-
-
-                            }
-
-
-                            /* =========================
-                               SHOW LAKAN
-                            ========================== */
-
-                            else {
-
-
-                                heroCharacter.src =
-                                    "assets/lakan.png";
-
-
-                                heroCharacter.alt =
-                                    "Lakan, the Sacred Guardian";
-
-
-                                characterRole.textContent =
-                                    "PROTAGONIST";
-
-
-                                characterName.textContent =
-                                    "LAKAN";
-
-
-                                characterDescription.textContent =
-                                    "The player-controlled Sacred Guardian who must recover his lost memories and confront Sidapa.";
-
-
-                                switchText.textContent =
-                                    "Meet Sidapa";
-
-
-                                characterSwitch.setAttribute(
-                                    "aria-label",
-                                    "Switch to Sidapa"
-                                );
-
-
-                                showingLakan =
-                                    true;
-
-                            }
-
-
-                            /*
-                             * Trigger the CSS
-                             * fade-in animation.
-                             */
-
-                            requestAnimationFrame(
-                                function () {
-
-                                    heroCharacter.classList.add(
-                                        "active"
-                                    );
-
-                                }
-                            );
-
-                        },
-                        200
-                    );
-
-                }
+            document.body.classList.remove(
+                "no-scroll"
             );
 
         }

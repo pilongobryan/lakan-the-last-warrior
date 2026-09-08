@@ -11,22 +11,17 @@
 
     <meta
         name="description"
-        content="Lakan: The Last Warrior — A Mobile-Based Adventure Game for Improving Understanding of Filipino Mythology Among Adolescents."
+        content="Lakan: The Last Warrior — a 3D mobile action-RPG inspired by Filipino mythology."
     >
 
-    <meta
-        name="theme-color"
-        content="#0f0c08"
+    <title>
+        Lakan: The Last Warrior
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
-
-    <title>Lakan: The Last Warrior</title>
-
-
-    <!-- =========================
-         GOOGLE FONTS
-    ========================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -39,21 +34,13 @@
         rel="stylesheet"
     >
 
-
-    <!-- =========================
-         CSS
-    ========================== -->
-
     <link
         rel="stylesheet"
         href="style.css"
     >
-
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          HEADER
@@ -61,14 +48,14 @@
 
     <header class="site-header">
 
-        <div class="container nav">
+        <div class="container nav-wrap">
 
             <!-- Logo -->
 
             <a
-                href="#top"
+                href="#home"
                 class="brand"
-                aria-label="Lakan home"
+                aria-label="Lakan The Last Warrior"
             >
 
                 <img
@@ -91,8 +78,8 @@
                     Story
                 </a>
 
-                <a href="#levels">
-                    Levels
+                <a href="#adventure">
+                    Adventure
                 </a>
 
                 <a href="#features">
@@ -101,6 +88,10 @@
 
                 <a href="#characters">
                     Characters
+                </a>
+
+                <a href="#team">
+                    Developers
                 </a>
 
                 <a href="#download">
@@ -114,24 +105,25 @@
 
             <a
                 href="#download"
-                class="nav-button"
+                class="header-cta"
             >
-                Download
+                Get the game
             </a>
 
 
             <!-- Mobile Menu Button -->
 
             <button
+                class="menu-toggle"
+                id="menuToggle"
                 type="button"
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open menu"
+                aria-label="Open navigation"
                 aria-expanded="false"
-                aria-controls="mobileMenu"
             >
 
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
 
             </button>
 
@@ -141,8 +133,8 @@
         <!-- Mobile Navigation -->
 
         <nav
-            id="mobileMenu"
-            class="mobile-menu"
+            class="mobile-nav"
+            id="mobileNav"
             aria-label="Mobile navigation"
         >
 
@@ -150,8 +142,8 @@
                 Story
             </a>
 
-            <a href="#levels">
-                Levels
+            <a href="#adventure">
+                Adventure
             </a>
 
             <a href="#features">
@@ -160,6 +152,10 @@
 
             <a href="#characters">
                 Characters
+            </a>
+
+            <a href="#team">
+                Developers
             </a>
 
             <a href="#download">
@@ -172,33 +168,27 @@
 
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    <main id="home">
 
-    <main id="top">
-
-
-        <!-- =================================================
+        <!-- =====================================================
              HERO
-        ================================================== -->
+        ====================================================== -->
 
-        <section class="hero">
-
-            <div class="hero-background"></div>
-
+        <section class="hero grain">
 
             <div class="container hero-grid">
 
 
-                <!-- =========================
-                     HERO CONTENT
-                ========================== -->
+                <!-- Hero Text -->
 
-                <div class="hero-copy">
+                <div class="hero-content">
 
                     <div class="eyebrow">
+
+                        <span class="eyebrow-line"></span>
+
                         FILIPINO MYTHOLOGY • MOBILE ACTION-RPG
+
                     </div>
 
 
@@ -206,76 +196,77 @@
 
                         Lakan:
 
-                        <span>
+                        <em>
                             The Last Warrior
-                        </span>
+                        </em>
 
                     </h1>
 
 
-                    <p class="hero-text">
+                    <p class="hero-description">
 
-                        Step into the role of Lakan, a Sacred Guardian
-                        who must recover his lost memories, confront
-                        Sidapa, and restore balance between the
-                        spiritual and mortal realms.
+                        Enter a myth-inspired world shaped by
+                        Filipino stories, warriors, creatures,
+                        values, and traditions.
 
                     </p>
 
-
-                    <!-- Buttons -->
 
                     <div class="hero-buttons">
 
                         <a
                             href="#download"
-                            class="button button-primary"
+                            class="btn btn-primary"
                         >
-                            Download APK
+
+                            DOWNLOAD THE GAME
+
                         </a>
 
 
                         <a
                             href="#story"
-                            class="button button-secondary"
+                            class="btn btn-secondary"
                         >
-                            Discover the Story
+
+                            DISCOVER THE STORY
+
                         </a>
 
                     </div>
 
 
-                    <!-- Stats -->
+                    <!-- Hero Facts -->
 
-                    <div class="hero-stats">
+                    <div class="hero-facts">
 
-                        <div class="stat">
+                        <div class="hero-fact">
 
                             <strong>
                                 10–19
                             </strong>
 
                             <span>
-                                Primary users
+                                Target Age
                             </span>
 
                         </div>
 
 
-                        <div class="stat">
+                        <div class="hero-fact">
 
                             <strong>
                                 6
                             </strong>
 
                             <span>
-                                Story levels
+                                Story Levels
                             </span>
 
                         </div>
 
 
-                        <div class="stat">
+                        <div class="hero-fact">
 
                             <strong>
                                 Android 9+
@@ -293,29 +284,19 @@
 
 
 
-                <!-- =========================
-                     HERO CHARACTER SWITCHER
-                ========================== -->
+                <!-- Hero Character -->
 
-                <div
-                    class="hero-visual"
-                    aria-label="Character showcase"
-                >
+                <div class="hero-character-area">
 
-                    <!-- Decorative glow -->
-
-                    <div class="hero-glow"></div>
+                    <div class="character-glow"></div>
 
 
-                    <!-- Character -->
-
-                    <div class="hero-character-display">
+                    <div class="hero-character">
 
                         <img
-                            id="heroCharacter"
                             src="assets/lakan.png"
-                            alt="Lakan, the Sacred Guardian"
-                            class="hero-character active"
+                            alt="Lakan character"
+                            id="heroCharacter"
                         >
 
                     </div>
@@ -323,45 +304,46 @@
 
                     <!-- Character Information -->
 
-                    <div class="character-switch-info">
+                    <div class="character-switcher">
 
-                        <span id="characterRole">
-                            PROTAGONIST
-                        </span>
+                        <div class="character-label">
 
-                        <h3 id="characterName">
-                            LAKAN
-                        </h3>
+                            <span id="characterRole">
+                                SACRED GUARDIAN
+                            </span>
 
-                        <p id="characterDescription">
+                            <h2 id="characterName">
+                                LAKAN
+                            </h2>
 
-                            The player-controlled Sacred Guardian
-                            who must recover his lost memories and
-                            confront Sidapa.
+                            <p id="characterDescription">
 
-                        </p>
+                                A warrior whose journey begins
+                                with a search for identity,
+                                purpose, and balance.
+
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="character-switch-button"
+                            id="characterSwitch"
+                            type="button"
+                        >
+
+                            <span id="switchText">
+                                Meet Sidapa
+                            </span>
+
+                            <span class="switch-arrow">
+                                →
+                            </span>
+
+                        </button>
 
                     </div>
-
-
-                    <!-- Switch Button -->
-
-                    <button
-                        type="button"
-                        class="character-switch"
-                        id="characterSwitch"
-                        aria-label="Switch to Sidapa"
-                    >
-
-                        <span id="switchText">
-                            Meet Sidapa
-                        </span>
-
-                        <span class="switch-arrow">
-                            →
-                        </span>
-
-                    </button>
 
                 </div>
 
@@ -371,37 +353,36 @@
 
 
 
-        <!-- =================================================
-             STORY SECTION
-        ================================================== -->
+        <!-- =====================================================
+             STORY
+        ====================================================== -->
 
         <section
+            class="section story-section grain"
             id="story"
-            class="section story-section"
         >
 
             <div class="container story-grid">
 
 
-                <!-- Artwork -->
+                <div class="story-visual">
 
-                <div class="story-image">
+                    <div class="story-frame">
 
-                    <div class="story-image-overlay"></div>
+                        <img
+                            src="assets/lakan.png"
+                            alt="Lakan"
+                        >
 
-                    <img
-                        src="assets/lakan.png"
-                        alt="Lakan character artwork"
-                    >
+                        <div class="story-frame-label">
+                            THE LAST WARRIOR
+                        </div>
 
-                    <div class="image-label">
-                        THE SACRED GUARDIAN
                     </div>
 
                 </div>
 
 
-                <!-- Story -->
 
                 <div class="story-content">
 
@@ -412,54 +393,63 @@
 
                     <h2>
 
-                        A forgotten guardian.
-
+                        A warrior searching for
                         <span>
-                            A world falling out of balance.
+                            what was lost.
                         </span>
 
                     </h2>
 
 
-                    <p class="lead">
+                    <p class="story-lead">
 
-                        Sidapa, the God of Death and Ruler of Fate,
-                        seeks to eliminate the Alab ng Diwa — a divine
-                        energy passed down from Bathala that connects
-                        the heavens and the earth.
-
-                    </p>
-
-
-                    <p>
-
-                        During the siege of Tundun, Lakan, a Sacred
-                        Guardian, seals the Alab ng Diwa inside his
-                        Galang, a sacred bracelet, to prevent Sidapa
-                        from obtaining it.
+                        Lakan: The Last Warrior follows the
+                        journey of Lakan, a Sacred Guardian
+                        caught in a conflict involving the
+                        balance of the mortal and divine worlds.
 
                     </p>
 
 
                     <p>
 
-                        Believing the divine energy has been destroyed,
-                        Sidapa leaves Lakan weakened and casts the
-                        “Blindfold of the Soul,” erasing his memories
-                        and identity.
+                        At the heart of the story is the
+                        <strong>
+                            Alab ng Diwa
+                        </strong>
+                        — a divine energy that connects the
+                        heavens and the earth.
 
                     </p>
 
 
                     <p>
 
-                        Players take the role of Lakan and recover
-                        scattered Memory Fragments across six story
-                        levels while encountering mythological creatures,
-                        NPCs, quests, cultural practices, traditional
-                        items, and Filipino values.
+                        As Lakan travels through different
+                        regions, he encounters creatures,
+                        characters, challenges, and fragments
+                        of a past that gradually reveal the
+                        truth behind his journey.
 
                     </p>
+
+
+                    <div class="story-note">
+
+                        <span class="story-note-mark">
+                            ✦
+                        </span>
+
+                        <p>
+
+                            The adventure combines mythology,
+                            exploration, combat, and cultural
+                            discovery into one interactive
+                            experience.
+
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -469,31 +459,30 @@
 
 
 
-        <!-- =================================================
-             LEVELS SECTION
-        ================================================== -->
+        <!-- =====================================================
+             THE ADVENTURE
+        ====================================================== -->
 
         <section
-            id="levels"
-            class="section levels-section"
+            class="section adventure-section"
+            id="adventure"
         >
 
             <div class="container">
 
-
                 <div class="section-heading">
 
                     <div class="section-label">
-                        THE JOURNEY
+                        THE ADVENTURE
                     </div>
 
 
                     <h2>
 
-                        Six levels.
+                        Explore a world built around
 
                         <span>
-                            One final confrontation.
+                            Filipino mythology.
                         </span>
 
                     </h2>
@@ -501,287 +490,102 @@
 
                     <p>
 
-                        Each story level introduces different
-                        environments, mythological creatures,
-                        mechanics, objectives, and challenges.
+                        Travel through a six-level adventure
+                        where combat, exploration, quests,
+                        culture, and mythology come together.
 
                     </p>
 
                 </div>
 
 
+                <div class="adventure-grid">
 
-                <div class="levels-grid">
 
+                    <article class="adventure-card">
 
-                    <!-- LEVEL 1 -->
-
-                    <article class="level-card">
-
-                        <div class="level-number">
+                        <div class="adventure-number">
                             01
                         </div>
 
                         <h3>
-                            The Ash of Tundun
+                            Explore
                         </h3>
 
                         <p>
 
-                            The introductory level where players
-                            learn the core combat system, resources,
-                            controls, and Mythological Almanac.
+                            Discover different environments,
+                            hidden areas, NPCs, quests, and
+                            challenges throughout the adventure.
 
                         </p>
-
-                        <div class="level-tags">
-
-                            <span>
-                                Kampilan
-                            </span>
-
-                            <span>
-                                Aswang
-                            </span>
-
-                            <span>
-                                Almanac
-                            </span>
-
-                        </div>
 
                     </article>
 
 
+                    <article class="adventure-card">
 
-                    <!-- LEVEL 2 -->
-
-                    <article class="level-card">
-
-                        <div class="level-number">
+                        <div class="adventure-number">
                             02
                         </div>
 
                         <h3>
-                            The Giant of Ilocos
+                            Fight
                         </h3>
 
                         <p>
 
-                            Introduces environmental fog, advanced
-                            enemy behavior, the Pugot encounter,
-                            side quests, and the Talent System.
+                            Take on enemies using real-time
+                            combat with Lakan's weapons and
+                            abilities.
 
                         </p>
-
-                        <div class="level-tags">
-
-                            <span>
-                                Fog
-                            </span>
-
-                            <span>
-                                Pugot
-                            </span>
-
-                            <span>
-                                Talents
-                            </span>
-
-                        </div>
 
                     </article>
 
 
+                    <article class="adventure-card">
 
-                    <!-- LEVEL 3 -->
-
-                    <article class="level-card">
-
-                        <div class="level-number">
+                        <div class="adventure-number">
                             03
                         </div>
 
                         <h3>
-                            The Blood-Moon over Capiz
+                            Discover
                         </h3>
 
                         <p>
 
-                            Introduces ranged combat through the Pana,
-                            defense-based objectives, and combat
-                            against Manananggal enemies.
+                            Learn about mythical creatures,
+                            cultural items, Filipino values,
+                            and important discoveries through
+                            the Mythological Almanac.
 
                         </p>
-
-                        <div class="level-tags">
-
-                            <span>
-                                Pana
-                            </span>
-
-                            <span>
-                                Defense
-                            </span>
-
-                            <span>
-                                Manananggal
-                            </span>
-
-                        </div>
 
                     </article>
 
 
+                    <article class="adventure-card">
 
-                    <!-- LEVEL 4 -->
-
-                    <article class="level-card">
-
-                        <div class="level-number">
+                        <div class="adventure-number">
                             04
                         </div>
 
                         <h3>
-                            The Curse of Sugbo
+                            Progress
                         </h3>
 
                         <p>
 
-                            A curse-driven level featuring Cursed
-                            and Poison status effects, enemy tracking,
-                            and the Mangkukulam encounter.
+                            Develop your character, complete
+                            quests, collect equipment, and
+                            improve your Talino, Tapang, Tatag,
+                            and Liksi.
 
                         </p>
 
-                        <div class="level-tags">
-
-                            <span>
-                                Curse
-                            </span>
-
-                            <span>
-                                Poison
-                            </span>
-
-                            <span>
-                                Mangkukulam
-                            </span>
-
-                        </div>
-
                     </article>
-
-
-
-                    <!-- LEVEL 5 -->
-
-                    <article class="level-card">
-
-                        <div class="level-number">
-                            05
-                        </div>
-
-                        <h3>
-                            The Hidden Valley of Zamboanga
-                        </h3>
-
-                        <p>
-
-                            Lakan protects an elderly couple through
-                            the Dark Woods while encountering Busaw,
-                            Amomongo, Nuno sa Punso, and Kapre.
-
-                        </p>
-
-                        <div class="level-tags">
-
-                            <span>
-                                Escort
-                            </span>
-
-                            <span>
-                                Busaw
-                            </span>
-
-                            <span>
-                                Amomongo
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- LEVEL 6 -->
-
-                    <article class="level-card level-final">
-
-                        <div class="level-number">
-                            06
-                        </div>
-
-                        <h3>
-                            The Final Ascent of Mt. Apo
-                        </h3>
-
-                        <p>
-
-                            The culmination of the game featuring
-                            the Forest Gauntlet, Maze of the Lost,
-                            and the final multi-phase battle against
-                            Sidapa.
-
-                        </p>
-
-                        <div class="level-tags">
-
-                            <span>
-                                Maze
-                            </span>
-
-                            <span>
-                                Sidapa
-                            </span>
-
-                            <span>
-                                Final Form
-                            </span>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-
-                <!-- Survival Mode -->
-
-                <div class="survival-banner">
-
-                    <div>
-
-                        <div class="section-label">
-                            UNLOCKABLE
-                        </div>
-
-                        <h3>
-                            Survival Mode
-                        </h3>
-
-                    </div>
-
-
-                    <p>
-
-                        After completing Level Six, players unlock
-                        an offline, single-player, wave-based combat
-                        mode featuring progressively difficult enemy
-                        groups.
-
-                    </p>
 
                 </div>
 
@@ -791,31 +595,30 @@
 
 
 
-        <!-- =================================================
-             FEATURES SECTION
-        ================================================== -->
+        <!-- =====================================================
+             CORE FEATURES
+        ====================================================== -->
 
         <section
+            class="section features-section grain"
             id="features"
-            class="section features-section"
         >
 
             <div class="container">
 
-
                 <div class="section-heading">
 
                     <div class="section-label">
-                        GAME SYSTEMS
+                        CORE FEATURES
                     </div>
 
 
                     <h2>
 
-                        Learn through
+                        Built for
 
                         <span>
-                            interaction.
+                            action and discovery.
                         </span>
 
                     </h2>
@@ -823,21 +626,20 @@
 
                     <p>
 
-                        Filipino mythology is integrated directly into
-                        the gameplay experience through exploration,
-                        combat, quests, progression, and the
-                        Mythological Almanac.
+                        Lakan combines action-RPG systems with
+                        interactive cultural learning without
+                        giving away the adventure's major story
+                        moments.
 
                     </p>
 
                 </div>
-
 
 
                 <div class="features-grid">
 
 
-                    <!-- FEATURE -->
+                    <!-- Feature 1 -->
 
                     <article class="feature-card">
 
@@ -851,16 +653,18 @@
 
                         <p>
 
-                            Fight mythological enemies using the
-                            Kampilan for melee combat, the Pana for
-                            ranged combat, and special combat abilities
-                            such as Buntot Pagi.
+                            Engage enemies through real-time
+                            melee and ranged combat using
+                            Lakan's available weapons and
+                            abilities.
 
                         </p>
 
                     </article>
 
 
+
+                    <!-- Feature 2 -->
 
                     <article class="feature-card">
 
@@ -869,14 +673,14 @@
                         </div>
 
                         <h3>
-                            Talent System
+                            Character Progression
                         </h3>
 
                         <p>
 
-                            Allocate Talent Points across Tapang,
-                            Tatag, Liksi, and Talino to improve
-                            Lakan's abilities.
+                            Develop Lakan through the Talent
+                            System, improving Tapang, Tatag,
+                            Liksi, and Talino as you progress.
 
                         </p>
 
@@ -884,10 +688,12 @@
 
 
 
+                    <!-- Feature 3 -->
+
                     <article class="feature-card">
 
                         <div class="feature-icon">
-                            ✦
+                            ✧
                         </div>
 
                         <h3>
@@ -896,38 +702,43 @@
 
                         <p>
 
-                            Review mythical creatures, items,
-                            equipment, Filipino values, enemy
-                            information, and completed mission
-                            accomplishments.
+                            Discover entries covering mythical
+                            creatures, items, equipment,
+                            Filipino values, and completed
+                            missions.
 
                         </p>
 
                     </article>
 
 
+
+                    <!-- Feature 4 -->
 
                     <article class="feature-card">
 
                         <div class="feature-icon">
-                            ⚑
+                            ◌
                         </div>
 
                         <h3>
-                            Main & Side Quests
+                            Exploration & Quests
                         </h3>
 
                         <p>
 
-                            Complete required main quests to progress
-                            through the story and optional side quests
-                            for additional rewards and cultural content.
+                            Explore environments, complete
+                            main missions, and take on optional
+                            side quests for additional rewards
+                            and discoveries.
 
                         </p>
 
                     </article>
 
 
+
+                    <!-- Feature 5 -->
 
                     <article class="feature-card">
 
@@ -941,9 +752,10 @@
 
                         <p>
 
-                            Interact with villagers, quest givers,
-                            merchants, healers, and other characters
-                            throughout the adventure.
+                            Meet characters throughout the
+                            adventure and interact with NPCs
+                            through dialogue and quest
+                            objectives.
 
                         </p>
 
@@ -951,21 +763,24 @@
 
 
 
+                    <!-- Feature 6 -->
+
                     <article class="feature-card">
 
                         <div class="feature-icon">
-                            ◌
+                            ◐
                         </div>
 
                         <h3>
-                            Offline Progress
+                            Offline Gameplay
                         </h3>
 
                         <p>
 
-                            Player progression, equipment, skills,
-                            quests, and Mythological Almanac entries
-                            are stored through the local save system.
+                            Play the game offline after
+                            installation, with local save
+                            functionality preserving your
+                            progress.
 
                         </p>
 
@@ -979,31 +794,27 @@
 
 
 
-        <!-- =================================================
-             CHARACTERS
-        ================================================== -->
+        <!-- =====================================================
+             KNOWLEDGE-ACTION LOOP
+        ====================================================== -->
 
-        <section
-            id="characters"
-            class="section characters-section"
-        >
+        <section class="section knowledge-section">
 
             <div class="container">
 
-
-                <div class="section-heading">
+                <div class="section-heading centered">
 
                     <div class="section-label">
-                        CENTRAL FIGURES
+                        KNOWLEDGE-ACTION LOOP
                     </div>
 
 
                     <h2>
 
-                        Meet Lakan
+                        Discover.
 
                         <span>
-                            and Sidapa.
+                            Understand. Apply.
                         </span>
 
                     </h2>
@@ -1011,13 +822,118 @@
 
                     <p>
 
-                        Two central figures at the heart of the
-                        game's mythology-driven conflict.
+                        The Mythological Almanac connects
+                        cultural knowledge with the player's
+                        actions throughout the game.
 
                     </p>
 
                 </div>
 
+
+                <div class="knowledge-flow">
+
+
+                    <div class="knowledge-step">
+
+                        <span class="knowledge-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            Encounter new cultural and
+                            mythological information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="knowledge-connector">
+                        →
+                    </div>
+
+
+                    <div class="knowledge-step">
+
+                        <span class="knowledge-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Learn through the Mythological
+                            Almanac and exploration.
+                        </p>
+
+                    </div>
+
+
+                    <div class="knowledge-connector">
+                        →
+                    </div>
+
+
+                    <div class="knowledge-step">
+
+                        <span class="knowledge-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Apply
+                        </h3>
+
+                        <p>
+                            Use what you learn to support
+                            decisions, combat, and progression.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CHARACTERS
+        ====================================================== -->
+
+        <section
+            class="section characters-section grain"
+            id="characters"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        CHARACTERS
+                    </div>
+
+
+                    <h2>
+
+                        The forces at the heart of
+
+                        <span>
+                            the story.
+                        </span>
+
+                    </h2>
+
+                </div>
 
 
                 <div class="characters-grid">
@@ -1025,9 +941,9 @@
 
                     <!-- LAKAN -->
 
-                    <article class="character-panel lakan-panel">
+                    <article class="character-card">
 
-                        <div class="character-panel-image">
+                        <div class="character-image">
 
                             <img
                                 src="assets/lakan.png"
@@ -1037,24 +953,23 @@
                         </div>
 
 
-                        <div class="character-panel-content">
+                        <div class="character-card-content">
 
-                            <span class="character-role">
-                                PROTAGONIST
+                            <span>
+                                SACRED GUARDIAN
                             </span>
-
 
                             <h3>
                                 Lakan
                             </h3>
 
-
                             <p>
 
-                                The player-controlled Sacred Guardian.
-                                Lakan must recover his lost memories
-                                through scattered Memory Fragments,
-                                confront Sidapa, and restore balance.
+                                The protagonist of the
+                                adventure and a Sacred
+                                Guardian whose journey is
+                                tied to the balance of the
+                                world.
 
                             </p>
 
@@ -1066,9 +981,9 @@
 
                     <!-- SIDAPA -->
 
-                    <article class="character-panel sidapa-panel">
+                    <article class="character-card sidapa-card">
 
-                        <div class="character-panel-image">
+                        <div class="character-image">
 
                             <img
                                 src="assets/sidapa.png"
@@ -1078,23 +993,22 @@
                         </div>
 
 
-                        <div class="character-panel-content">
+                        <div class="character-card-content">
 
-                            <span class="character-role">
-                                ANTAGONIST
+                            <span>
+                                GOD OF DEATH
                             </span>
-
 
                             <h3>
                                 Sidapa
                             </h3>
 
-
                             <p>
 
-                                The God of Death and Ruler of Fate.
-                                Sidapa seeks to eliminate the Alab ng
-                                Diwa and become the sole master of fate.
+                                The God of Death and Ruler of
+                                Fate whose presence forms a
+                                central force in Lakan's
+                                journey.
 
                             </p>
 
@@ -1110,183 +1024,266 @@
 
 
 
-        <!-- =================================================
-             KNOWLEDGE-ACTION LOOP
-        ================================================== -->
+        <!-- =====================================================
+             DEVELOPERS
+        ====================================================== -->
 
-        <section class="section learning-section">
+<!-- =====================================================
+     DEVELOPERS
+====================================================== -->
 
-            <div class="container learning-grid">
+<section
+    class="section team-section"
+    id="team"
+>
 
+    <div class="container">
 
-                <div>
+        <div class="section-heading centered">
 
-                    <div class="section-label">
-                        KNOWLEDGE-ACTION LOOP
-                    </div>
-
-
-                    <h2>
-
-                        Knowledge becomes
-
-                        <span>
-                            part of the adventure.
-                        </span>
-
-                    </h2>
-
-
-                    <p>
-
-                        The Mythological Almanac acts as both a
-                        learning database and a gameplay resource.
-                        Players can discover information about
-                        creatures, cultural items, Filipino values,
-                        and enemy weaknesses, then apply that
-                        knowledge during gameplay.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="learning-steps">
-
-
-                    <div class="learning-step">
-
-                        <span>
-                            01
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Discover
-                            </h3>
-
-                            <p>
-
-                                Encounter mythological creatures,
-                                items, NPCs, and cultural information.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="learning-step">
-
-                        <span>
-                            02
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Understand
-                            </h3>
-
-                            <p>
-
-                                Read information through NPC dialogue
-                                and the Mythological Almanac.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="learning-step">
-
-                        <span>
-                            03
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Apply
-                            </h3>
-
-                            <p>
-
-                                Use acquired knowledge during combat,
-                                exploration, and quest progression.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="section-label">
+                THE DEVELOPERS
             </div>
 
-        </section>
+            <h2>
+                Meet the team behind
+                <span>
+                    Lakan.
+                </span>
+            </h2>
+
+            <p>
+                Lakan: The Last Warrior was developed
+                as a Bachelor of Science in Information
+                Technology capstone project.
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <!-- EULYSIES -->
+
+            <article class="developer-card">
+
+                <div class="developer-photo">
+
+                    <img
+                        src="assets/euly.png"
+                        alt="Eulysies P. Domantay"
+                    >
+
+                </div>
+
+                <div class="developer-info">
+
+                    <span>
+                        PROPONENT & DEVELOPER
+                    </span>
+
+                    <h3>
+                        Eulysies P. Domantay
+                    </h3>
+
+                </div>
+
+            </article>
 
 
 
-        <!-- =================================================
+            <!-- EFREN -->
+
+            <article class="developer-card">
+
+                <div class="developer-photo">
+
+                    <img
+                        src="assets/efren1.png"
+                        alt="Efren B. Lamoste Jr."
+                    >
+
+                </div>
+
+                <div class="developer-info">
+
+                    <span>
+                        PROPONENT & DEVELOPER
+                    </span>
+
+                    <h3>
+                        Efren B. Lamoste Jr.
+                    </h3>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MICHAEL -->
+
+            <article class="developer-card">
+
+                <div class="developer-photo">
+
+                    <img
+                        src="assets/michael.png"
+                        alt="Michael M. Mendoza"
+                    >
+
+                </div>
+
+                <div class="developer-info">
+
+                    <span>
+                        PROPONENT & DEVELOPER
+                    </span>
+
+                    <h3>
+                        Michael M. Mendoza
+                    </h3>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- BRYAN -->
+
+            <article class="developer-card">
+
+                <div class="developer-photo">
+
+                    <img
+                        src="assets/bryan.png"
+                        alt="Bryan Julius H. Pilongo"
+                    >
+
+                </div>
+
+                <div class="developer-info">
+
+                    <span>
+                        PROPONENT & DEVELOPER
+                    </span>
+
+                    <h3>
+                        Bryan Julius H. Pilongo
+                    </h3>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="team-footer">
+
+            <div class="team-line"></div>
+
+            <p>
+                Bachelor of Science in Information Technology
+            </p>
+
+            <p>
+                College of Computer Studies
+            </p>
+
+            <p>
+                Pambayang Dalubhasaan ng Marilao
+            </p>
+
+            <strong>
+                August 2026
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =====================================================
              DOWNLOAD
-        ================================================== -->
+        ====================================================== -->
 
         <section
+            class="section download-section grain"
             id="download"
-            class="section download-section"
         >
 
-            <div class="container">
+            <div class="container download-container">
 
-                <div class="download-card">
-
+                <div class="section-heading centered">
 
                     <div class="section-label">
-                        ANDROID APPLICATION
+                        DOWNLOAD
                     </div>
 
 
                     <h2>
-                        Begin the journey.
+
+                        Step into the world of
+
+                        <span>
+                            Lakan.
+                        </span>
+
                     </h2>
 
 
                     <p>
 
-                        Lakan: The Last Warrior is designed as a
-                        standalone offline Android game. Internet
-                        access is not required after installation.
+                        Experience the adventure on Android
+                        and discover a game inspired by Filipino
+                        mythology and culture.
+
+                    </p>
+
+                </div>
+
+
+                <div class="download-panel">
+
+
+                    <div class="download-icon">
+                        ⚔
+                    </div>
+
+
+                    <h3>
+                        Android
+                    </h3>
+
+
+                    <p class="download-description">
+
+                        Android 9 or later
 
                     </p>
 
 
-                    <div class="download-button-row">
+                    <a
+                        href="#"
+                        class="btn btn-primary download-button"
+                    >
 
-                        <!--
-                            REPLACE "#" WITH YOUR ACTUAL APK LINK
-                        -->
+                        DOWNLOAD APK
 
-                        <a
-                            href="#"
-                            class="button button-primary large"
-                        >
-                            Download APK
-                        </a>
-
-                    </div>
+                    </a>
 
 
+                    <p class="download-note">
 
-                    <!-- Requirements -->
+                        Download link to be added.
+
+                    </p>
+
 
                     <div class="requirements">
 
@@ -1294,7 +1291,7 @@
                         <div class="requirement">
 
                             <span>
-                                Platform
+                                PLATFORM
                             </span>
 
                             <strong>
@@ -1304,7 +1301,6 @@
                         </div>
 
 
-
                         <div class="requirement">
 
                             <span>
@@ -1312,31 +1308,29 @@
                             </span>
 
                             <strong>
-                                4 GB recommended
+                                4GB Recommended
                             </strong>
 
                         </div>
 
 
-
                         <div class="requirement">
 
                             <span>
-                                Storage
+                                STORAGE
                             </span>
 
                             <strong>
-                                4–6 GB available
+                                4–6GB Available
                             </strong>
 
                         </div>
 
 
-
                         <div class="requirement">
 
                             <span>
-                                Connection
+                                MODE
                             </span>
 
                             <strong>
@@ -1346,16 +1340,6 @@
                         </div>
 
                     </div>
-
-
-
-                    <p class="download-note">
-
-                        Performance may vary depending on the device's
-                        processor, RAM, graphics capability, Android
-                        version, and overall hardware condition.
-
-                    </p>
 
                 </div>
 
@@ -1371,13 +1355,13 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="site-footer">
+    <footer>
 
-        <div class="container footer-inner">
+        <div class="container footer-content">
 
 
             <a
-                href="#top"
+                href="#home"
                 class="footer-brand"
             >
 
@@ -1391,24 +1375,25 @@
 
             <p>
 
-                Lakan: The Last Warrior
-
-                <br>
-
-                A Mobile-Based Adventure Game for Improving
-                Understanding of Filipino Mythology Among Adolescents
+                © 2026 Lakan: The Last Warrior
 
             </p>
+
+
+            <a
+                href="#home"
+                class="back-top"
+            >
+
+                Back to top ↑
+
+            </a>
 
         </div>
 
     </footer>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
 
     <script src="script.js"></script>
 
