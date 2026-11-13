@@ -563,13 +563,7 @@ export default function App() {
       </div>
     </section>
 
-    <section className="section archive-section" id="works">
-      <div className="container">
-        <div className="section-heading centered"><div className="section-label">PROJECT PORTFOLIO</div><h2>Works &amp; <span>level assets.</span></h2><p>A selection of level design, Blender, and web development work from the project.</p></div>
-        <div className="archive-tabs" role="tablist">{workTabs.map((tab) => <button key={tab.value} role="tab" aria-selected={workTab === tab.value} onClick={() => setWorkTab(tab.value)} className={workTab === tab.value ? 'selected' : ''}>{tab.label}</button>)}</div>
-        <div className="archive-projects">{visibleProjects.map((project) => <article className="archive-project" key={project.id}>{project.img ? <img src={project.img} alt={project.title} onError={(event) => { event.currentTarget.style.display = 'none'; }} /> : <div className="archive-project-placeholder">{project.tag}</div>}<div><small>{project.tag}</small><h3>{project.title}</h3><p>{project.desc}</p></div></article>)}</div>
-      </div>
-    </section>
+
     
 
 
