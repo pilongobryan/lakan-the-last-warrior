@@ -6,8 +6,8 @@ import { clone as cloneSkinned } from 'three/addons/utils/SkeletonUtils.js';
 import './style.css';
 
 const characters = [
-  { image: 'assets/lakan.png', alt: 'Lakan character', role: 'SACRED GUARDIAN', name: 'LAKAN', description: 'A warrior whose journey begins with a search for identity, purpose, and balance.', button: 'Meet Sidapa' },
-  { image: 'assets/sidapa.png', alt: 'Sidapa character', role: 'GOD OF DEATH', name: 'SIDAPA', description: "The God of Death and Ruler of Fate whose presence forms a central force in Lakan's journey.", button: 'Meet Lakan' },
+  { image: '/assets/lakan.png', alt: 'Lakan character', role: 'SACRED GUARDIAN', name: 'LAKAN', description: 'A warrior whose journey begins with a search for identity, purpose, and balance.', button: 'Meet Sidapa' },
+  { image: '/assets/sidapa.png', alt: 'Sidapa character', role: 'GOD OF DEATH', name: 'SIDAPA', description: "The God of Death and Ruler of Fate whose presence forms a central force in Lakan's journey.", button: 'Meet Lakan' },
 ];
 
 const hotspots = [
@@ -25,7 +25,7 @@ const workTabs = [{label:'All works',value:'all'},{label:'3D level design',value
 
 
 function CharacterModel({ wireframe }) {
-  const { scene } = useGLTF('/LAKAN.glb');
+  const { scene } = useGLTF('/assets/LAKAN.glb');
   const model = useMemo(() => {
     const copy = cloneSkinned(scene);
     copy.traverse((node) => { if (node.isMesh && node.material) node.material = Array.isArray(node.material) ? node.material.map((mat) => mat.clone()) : node.material.clone(); });
@@ -78,7 +78,7 @@ export default function App() {
 
         <a href="#home" className="brand" aria-label="Lakan The Last Warrior">
           <img
-            src="assets/lakan-logo.png"
+            src="/assets/lakan-logo.png"
             alt="Lakan: The Last Warrior"
             className="brand-logo"
           />
@@ -241,7 +241,7 @@ export default function App() {
         <div className="container story-grid">
           <div className="story-visual">
             <div className="story-frame">
-              <img src="assets/lakan.png" alt="Lakan" />
+              <img src="/assets/lakan.png" alt="Lakan" />
 
               <div className="story-frame-label">THE LAST WARRIOR</div>
             </div>
@@ -514,7 +514,7 @@ export default function App() {
 
             <article className="character-card">
               <div className="character-image">
-                <img src="assets/lakan.png" alt="Lakan" />
+                <img src="/assets/lakan.png" alt="Lakan" />
               </div>
 
               <div className="character-card-content">
@@ -533,7 +533,7 @@ export default function App() {
 
             <article className="character-card sidapa-card">
               <div className="character-image">
-                <img src="assets/sidapa.png" alt="Sidapa" />
+                <img src="/assets/sidapa.png" alt="Sidapa" />
               </div>
 
               <div className="character-card-content">
@@ -587,11 +587,11 @@ export default function App() {
             
 
             <button
-              className="developer-card" type="button" data-image="assets/euly.png" data-name="Eulysies P. Domantay" onClick={openDeveloper}
+              className="developer-card" type="button" data-image="/assets/euly.png" data-name="Eulysies P. Domantay" onClick={openDeveloper}
               aria-label="View photo of Eulysies P. Domantay"
             >
               <div className="developer-photo">
-                <img src="assets/euly.png" alt="" />
+                <img src="/assets/euly.png" alt="" />
               </div>
 
               <div className="developer-info">
@@ -604,11 +604,11 @@ export default function App() {
             
 
             <button
-              className="developer-card" type="button" data-image="assets/efren.png" data-name="Efren B. Lamoste Jr." onClick={openDeveloper}
+              className="developer-card" type="button" data-image="/assets/efren.png" data-name="Efren B. Lamoste Jr." onClick={openDeveloper}
               aria-label="View photo of Efren B. Lamoste Jr."
             >
               <div className="developer-photo">
-                <img src="assets/efren.png" alt="" />
+                <img src="/assets/efren.png" alt="" />
               </div>
 
               <div className="developer-info">
@@ -621,11 +621,11 @@ export default function App() {
             
 
             <button
-              className="developer-card" type="button" data-image="assets/michael.png" data-name="Michael M. Mendoza" onClick={openDeveloper}
+              className="developer-card" type="button" data-image="/assets/michael.png" data-name="Michael M. Mendoza" onClick={openDeveloper}
               aria-label="View photo of Michael M. Mendoza"
             >
               <div className="developer-photo">
-                <img src="assets/michael.png" alt="" />
+                <img src="/assets/michael.png" alt="" />
               </div>
 
               <div className="developer-info">
@@ -638,11 +638,11 @@ export default function App() {
             
 
             <button
-              className="developer-card" type="button" data-image="assets/bryan.png" data-name="Bryan Julius H. Pilongo" onClick={openDeveloper}
+              className="developer-card" type="button" data-image="/assets/bryan.png" data-name="Bryan Julius H. Pilongo" onClick={openDeveloper}
               aria-label="View photo of Bryan Julius H. Pilongo"
             >
               <div className="developer-photo">
-                <img src="assets/bryan.png" alt="" />
+                <img src="/assets/bryan.png" alt="" />
               </div>
 
               <div className="developer-info">
@@ -699,7 +699,7 @@ export default function App() {
             <div className="download-character">
               <div className="download-character-glow"></div>
 
-              <img src="assets/lakan.png" alt="Lakan" />
+              <img src="/assets/lakan.png" alt="Lakan" />
             </div>
 
             
@@ -751,7 +751,7 @@ export default function App() {
     <footer>
       <div className="container footer-content">
         <a href="#home" className="footer-brand">
-          <img src="assets/lakan-logo.png" alt="Lakan: The Last Warrior" />
+          <img src="/assets/lakan-logo.png" alt="Lakan: The Last Warrior" />
         </a>
 
         <p>© 2026 Lakan: The Last Warrior</p>
