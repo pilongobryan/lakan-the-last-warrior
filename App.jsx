@@ -235,6 +235,8 @@ export default function App() {
 
       
 
+      <ModelViewer />
+
       <section className="section story-section grain" id="story">
         <div className="container story-grid">
           <div className="story-visual">
@@ -548,12 +550,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
-      
-
-    <ModelViewer />
-
-    <section className="section archive-section" id="level-map">
+<section className="section archive-section" id="level-map">
       <div className="container">
         <div className="section-heading centered"><div className="section-label">LEVEL DESIGN</div><h2>Explore the <span>level map.</span></h2><p>Select a pin to learn about the purpose of each zone.</p></div>
         <div className="archive-map-layout">
