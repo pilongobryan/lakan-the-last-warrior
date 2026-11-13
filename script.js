@@ -157,7 +157,7 @@ const characters = {
     sidapa: {
 
         image:
-            "assets/JIMMY.png",
+            "assets/sidapa.png",
 
         role:
             "GOD OF DEATH",
